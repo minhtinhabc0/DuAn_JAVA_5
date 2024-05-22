@@ -1,0 +1,196 @@
+@charset "ISO-8859-1";
+body{
+    padding: 0;
+    margin: 0;
+    /* background-image: linear-gradient(to bottom right, rgb(124, 168, 233), rgb(1, 25, 59)); */
+    background-attachment: fixed;
+}
+
+.navbar-nav .nav-link {
+    color: white;
+}
+.navbar{
+    background-color: #3636367c; 
+    color: white;
+   
+ 
+}
+
+
+.navbar-nav .nav-link:hover {
+    color: aqua; 
+    transition: color 0.3 ease;
+}
+.ten{
+    font-weight: bold;
+    font-size: 50px;
+    margin-top: 200px;
+}
+.container {
+    padding-top: 100px;
+}
+
+.hinhsp {
+    height: 500px;
+    width: 100%;
+}
+.cahc {
+    
+padding-top: 200px;
+padding-bottom: 200px;
+}
+
+footer {
+    color: black;
+    background-color: #f1f1f1;
+    width: 100%;
+    text-align: center;
+}
+
+
+footer  a {
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+
+
+
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 1000px;
+    overflow: hidden;
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    z-index: 2;
+}
+
+.overlay h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.overlay p {
+    font-size: 50px;
+   font-weight: bold;
+}
+
+.vdqc {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+}
+.backgr {
+    background-color: white;
+    border-radius: 25px;
+}
+.listsanpham {   
+     width: 1000px;
+}
+
+
+
+/* coming */
+.displaynon{
+    border-radius: 20px;
+    height: 512px;
+    width: 512px;
+}
+.cach{
+    margin-top: 400px;
+    margin-bottom: 100px;
+}
+#countdown {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin: 20px;
+}
+.khoancach{
+    margin-right: 20px;
+}
+.tieude{
+ 
+    height: 1000px;
+    padding-top: 200px;
+ 
+
+}
+
+
+
+/* GT */
+
+.skey{
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+}
+.anhchinh{
+    display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+}
+.noidunggt>h1{
+    font-size: 50px;
+    color: aqua;
+    font-weight: bold;
+    
+    
+
+}
+
+
+.noidunggt>div {
+    padding-top: 500px;
+}
+
+
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 1000px;
+    overflow: hidden;
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    z-index: 2;
+}
+
+.overlay h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.overlay p {
+    font-size: 50px;
+   font-weight: bold;
+}
+
