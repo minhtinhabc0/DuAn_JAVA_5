@@ -16,7 +16,7 @@
   <div class="row">
   <div class="col-10">
   <form class="d-flex mb-5" role="search">
-    <input class="form-control me-2 " type="search" placeholder="Tìm kiếm" aria-label="Search" ng-model="keyword" ng-model-options="{debounce:500}">
+    <input class="form-control me-2 " type="search" placeholder="Tìm kiếm" aria-label="Search" ">
     <button class="btn btn-outline-info" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
   </form>
 </div>
@@ -31,15 +31,36 @@
 </div>
     <div class="row  shadow-lg pt-4">
 
-      <div class="col-sm-2 col-md-3 "  ng-repeat="p in dsSPN | filter:{name:keyword}|orderBy:selectedSort " >  
-          <a href="#!chitiet/{{p.id}}" style="text-decoration: none; color: black;" class="position-relative" ng-mouseover="showButton=true" ng-mouseout="showButton=false">     
-              <img ng-src="{{p.hinh[0]}}" style="height: 300px; width: 300px;">     
-                    <button ng-show="showButton" class="btn btn-sm btn-outline-warning position-absolute top-50 start-50 translate-middle">Chi tiết</button>
-              <p>{{p.name}} </p>
-              <b><p>{{p.gia|number:0}}đ</p></b>
-       </a>
-
-      </div>
+     <h1>Danh sách sản phẩm</h1>
+    <a href="/sanphams/new">Thêm sản phẩm mới</a>
+    <a href="/sanphams/cart">Xem giỏ hàng</a>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Tên sản phẩm</th>
+            <th>Giá gốc</th>
+            <th>Mô tả</th>
+            <th>Size</th>
+            <th>Màu sắc</th>
+            <th>Actions</th>
+        </tr>
+        <c:forEach var="sanPham" items="${sanPhams}">
+            <tr>
+                <td>${sanPham.id}</td>
+                <td>${sanPham.tenSanPham}</td>
+                <td>${sanPham.giaGoc}</td>
+                <td>${sanPham.moTa}</td>
+                <td>${sanPham.size}</td>
+                <td>${sanPham.mauSac}</td>
+                <td>
+                    <form action="/sanphams/addToCart/${sanPham.id}" method="post">
+                        <input type="number" name="quantity" value="1" min="1" />
+                        <button type="submit">Thêm vào giỏ hàng</button>
+                    </form>
+                </td>
+            </tr>
+        </c:forEach>
+    </table>
         
        </div>
        </div>
