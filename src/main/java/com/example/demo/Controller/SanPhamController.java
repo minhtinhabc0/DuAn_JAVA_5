@@ -29,16 +29,16 @@ public class SanPhamController {
 	        return "sanpham/danhsachsp";
 	    }
 	 @PostMapping("/addToCart/{id}")
-	    public String addToCart(@PathVariable Long id, @RequestParam int quantity, HttpSession session) {
-	        SanPham sanPham = sanPhamService.getSanPhamById(id);
-	        Cart cart = (Cart) session.getAttribute("cart");
-	        if (cart == null) {
-	            cart = new Cart();
-	            session.setAttribute("cart", cart);
-	        }
-	        cart.addItem(sanPham, quantity);
-	        return "redirect:/sanphams";
-	    }
+	 public String addToCart(@PathVariable Long id, @RequestParam int quantity, HttpSession session) {
+	     SanPham sanPham = sanPhamService.getSanPhamById(id);
+	     Cart cart = (Cart) session.getAttribute("cart");
+	     if (cart == null) {
+	         cart = new Cart();
+	         session.setAttribute("cart", cart);
+	     }
+	     cart.addItem(sanPham, quantity);
+	     return "redirect:/sanphams/cart"; // Chuyển hướng đến trang giỏ hàng
+	 }
 
 	    @GetMapping("/cart")
 	    public String viewCart(HttpSession session, Model model) {
@@ -48,6 +48,6 @@ public class SanPhamController {
 	            session.setAttribute("cart", cart);
 	        }
 	        model.addAttribute("cart", cart);
-	        return "GioHang/giohang";
+	        return "Cart/giohang";
 	    }
 }

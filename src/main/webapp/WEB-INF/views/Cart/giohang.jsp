@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,25 +34,26 @@
                   </div>
                   <div class="col-md-8">
                     <div class="card-body">
-                      <h5 class="card-title">{{sp.name}}</h5>
-                      <p class="text-danger">{{sp.gia *sp.quantity|number:0}}</p>
-                      <p class="card-text">Giày size: {{sp.size}}  | quà tặng: {{sp.phukien}}</p>
+                      <h5 class="card-title"></h5>
+                      <p class="text-danger"></p>
+                      <p class="card-text">Giày size: </p>
                       <div class="input-group input-group-sm mb-3">
                         <button class="btn btn-outline-secondary decreaseBtn border-black"
-                            ng-click="decreaseQuantity(sp)">-</button>
-                        <span class="quantitySpan btn border-black">{{ sp.quantity }}</span>
+                          >-</button>
+                        <span class="quantitySpan btn border-black"></span>
                         <button class="btn btn-outline-secondary increaseBtn border-black"
-                            ng-click="increaseQuantity(sp)">+</button>
+                           >+</button>
                     </div>
                     
                     </div>
                   </div>
-                  <button class="btn" ng-click="removeFromCart()"><i class="fa-solid fa-xmark"></i></button>
+                  <button class="btn" ><i class="fa-solid fa-xmark"></i></button>
                 </div> 
                </label>
                   </div>
                 
-            
+      
+        <hr>
 </div>      
 </div>
 
@@ -148,5 +149,14 @@
   <p><a href="#!home"> tiếp tục mua hàng</a> </p>
   </div>
 </div> 
+       <c:forEach var="item" items="${cart.items}">
+            <tr>
+                <td>${item.sanPham.id}</td>
+                <td>${item.sanPham.tenSanPham}</td>
+                <td>${item.sanPham.giaGoc}</td>
+                <td>${item.sanPham.mauSac}</td>
+            </tr>
+            <hr>
+        </c:forEach>
 </body>
 </html>
