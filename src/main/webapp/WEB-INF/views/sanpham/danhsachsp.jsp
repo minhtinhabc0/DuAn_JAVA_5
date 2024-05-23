@@ -53,10 +53,11 @@
                 <td>${sanPham.size}</td>
                 <td>${sanPham.mauSac}</td>
                 <td>
-                    <form action="/sanphams/addToCart/${sanPham.id}" method="post">
-                        <input type="number" name="quantity" value="1" min="1" />
-                        <button type="submit">Thêm vào giỏ hàng</button>
-                    </form>
+                    <form action="/cart/add/${sanPham.id}" method="post">
+    <input type="number" name="quantity" value="1" min="1" />
+    <button type="submit">Thêm vào giỏ hàng</button>
+</form>
+
                 </td>
             </tr>
         </c:forEach>

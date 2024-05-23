@@ -18,7 +18,7 @@ public class SanPhamService {
     }
 
 
-    public SanPham getSanPhamById(Long id) {
+    public SanPham getSanPhamById(Integer id) {
         return sanPhamRepository.findById(id).orElse(null);
     }
 
