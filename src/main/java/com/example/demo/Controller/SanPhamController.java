@@ -33,7 +33,8 @@ public class SanPhamController {
 	 public String getAllSanPhams(Model model) {
 	     List<SanPham> sanPhams = sanPhamService.getAllSanPhams();
 	     model.addAttribute("sanPhams", sanPhams);
-	     return "sanpham/danhsachsp";
+	     model.addAttribute("link", "../sanpham/danhsachsp.jsp");
+	     return "home/home";
 	 }
 
 	 

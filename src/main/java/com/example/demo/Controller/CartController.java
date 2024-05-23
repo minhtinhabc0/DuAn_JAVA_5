@@ -23,7 +23,8 @@ public class CartController {
         model.addAttribute("cart", cartService);
         model.addAttribute("count", cartService.getCount());
         model.addAttribute("amount", cartService.getAmount());
-        return "Cart/giohang";
+    	model.addAttribute("link","../Cart/giohang.jsp");
+        return "home/home";
     }
 
     @RequestMapping("/cart/add/{id}")

@@ -20,7 +20,7 @@
       <div class="collapse navbar-collapse " id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
           <li class="nav-item ">
-            <a class="nav-link " aria-current="page"  href="#!home">Trang chủ</a>
+            <a class="nav-link " aria-current="page"  href="/trangchu">Trang chủ</a>
           </li>
          
           <li class="nav-item dropdown">
@@ -40,7 +40,7 @@
             <a class="nav-link  " aria-current="page" href="#!gioithieu">Giới thiệu</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link  " aria-current="page" href="#!sapramat">sắp ra mắt</a>
+            <a class="nav-link  " aria-current="page" href="#">sắp ra mắt</a>
           </li>
           
         
@@ -61,10 +61,10 @@
                      <!--thêm tên-->
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#login"><i class="fa-solid fa-user"></i> Tài Khoản</a></li>
-                   <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#pass"><i class="fa-solid fa-key"></i> đổi mật khẩu</a></li>
+                  <li><a class="dropdown-item" href="/login" ><i class="fa-solid fa-user"></i> Tài Khoản</a></li>
+                   <li><a class="dropdown-item" href="/register" ><i class="fa-solid fa-key"></i> đổi mật khẩu</a></li>
                    <li><hr class="dropdown-divider"></li>
-                   <li><a class="dropdown-item" href="#!giohang"><i class="fa-solid fa-cart-shopping"></i> Giỏ hàng <span class="position-absolute translate-middle badge rounded-pill bg-RED"
+                   <li><a class="dropdown-item" href="/giohang"><i class="fa-solid fa-cart-shopping"></i> Giỏ hàng <span class="position-absolute translate-middle badge rounded-pill bg-RED"
                     style="background-color: rgb(226, 35, 76);">
                     {{ getTotalQuantity() }}
                     <span class="visually-hidden"></span>
