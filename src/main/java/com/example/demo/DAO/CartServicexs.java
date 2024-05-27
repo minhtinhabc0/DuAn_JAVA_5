@@ -43,7 +43,7 @@ public class CartServicexs implements CartService {
     public SanPham update(Integer id, String actions) { 
         SanPham sanPham = map.get(id);
         if (sanPham != null) {
-            if ("dis".equals(actions) && sanPham.getQty() > 0) {
+            if ("dis".equals(actions) && sanPham.getQty() > 1) {
                 sanPham.setQty(sanPham.getQty() - 1);
             } else if ("plus".equals(actions) && sanPham.getQty() < 100) {
                 sanPham.setQty(sanPham.getQty() + 1);

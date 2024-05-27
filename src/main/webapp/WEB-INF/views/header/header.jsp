@@ -55,7 +55,7 @@
                   <img src="img/avt.webp" alt="" height="40px" width="40px" style="border-radius: 20px;"> 
                   <span class="position-absolute translate-middle badge rounded-pill bg-RED"
                   style="background-color: rgb(226, 35, 76);">
-                  {{ getTotalQuantity() }}
+         
                   <span class="visually-hidden"></span>
               </span>
                      <!--thêm tên-->
@@ -64,9 +64,9 @@
                   <li><a class="dropdown-item" href="/login" ><i class="fa-solid fa-user"></i> Tài Khoản</a></li>
                    <li><a class="dropdown-item" href="/register" ><i class="fa-solid fa-key"></i> đổi mật khẩu</a></li>
                    <li><hr class="dropdown-divider"></li>
-                   <li><a class="dropdown-item" href="/giohang"><i class="fa-solid fa-cart-shopping"></i> Giỏ hàng <span class="position-absolute translate-middle badge rounded-pill bg-RED"
+                   <li><a class="dropdown-item" href="/cart/view"><i class="fa-solid fa-cart-shopping"></i> Giỏ hàng <span class="position-absolute translate-middle badge rounded-pill bg-RED"
                     style="background-color: rgb(226, 35, 76);">
-                    {{ getTotalQuantity() }}
+              
                     <span class="visually-hidden"></span>
                 </span></a></li>
                   <li><a class="dropdown-item" href="#!LS"><i class="fa-solid fa-calendar-days"></i> Lịch sử mua hàng</a></li>
