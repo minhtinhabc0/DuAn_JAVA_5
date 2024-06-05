@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 
 public class HomeController {
-@RequestMapping("/trangchu")
+@RequestMapping("/")
 public String Home(Model model) {
 	model.addAttribute("link", "../sanpham/sp.jsp");
 	return"home/home";

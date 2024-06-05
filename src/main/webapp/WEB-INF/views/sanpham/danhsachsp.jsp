@@ -93,26 +93,26 @@ body {
 					giỏ hàng</a>
 			</div>
 			<div class="row">
-				<c:forEach var="sanPham" items="${sanPhams}">
+				<c:forEach var="item" items="${sanphamm}">
 					<div class="col-md-4">
 						<div class="card">
 							<div class="card-body">
-								<h5 class="card-title">${sanPham.tenSanPham}</h5>
+								<h5 class="card-title">${item.tenSP}</h5>
 								<p class="card-text">
-									<strong>Giá:</strong> ${sanPham.giaGoc} đ
+									<strong>Giá:</strong>${item.gia} đ
 								</p>
 								<p class="card-text">
-									<strong>Mô tả:</strong> ${sanPham.moTa}
+									<strong>Mô tả:</strong> 
 								</p>
 								<p class="card-text">
-									<strong>Size:</strong> ${sanPham.size}
+									<strong>Size:</strong> 
 								</p>
 								<p class="card-text">
-<strong>Màu sắc:</strong> ${sanPham.mauSac}
+									<strong>Màu sắc:</strong> 
 								</p>
-								<form action="/cart/add/${sanPham.id}" method="post"
+								<form action="" method="post"
 									class="d-flex align-items-center">
-									
+
 									<button type="submit" class="btn btn-outline-success btn-sm">Thêm
 										vào giỏ hàng</button>
 								</form>

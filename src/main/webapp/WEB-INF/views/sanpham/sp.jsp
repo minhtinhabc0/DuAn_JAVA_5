@@ -18,7 +18,7 @@
       <p>Skey nơi thể hiện đẳng cấp</p>
       <p>Tạo chất riêng</p>
            
-        <a href="/sanphams"><button type="button" class="btn btn-outline-info">Trải Nghiệm Ngay <i class="fa-solid fa-cart-shopping fa-bounce"></i></button></a> 
+        <a href="/sanpham"><button type="button" class="btn btn-outline-info">Trải Nghiệm Ngay <i class="fa-solid fa-cart-shopping fa-bounce"></i></button></a> 
     </div>
     
   </div>
