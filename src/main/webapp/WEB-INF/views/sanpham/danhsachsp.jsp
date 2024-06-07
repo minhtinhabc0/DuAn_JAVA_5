@@ -126,8 +126,7 @@ body {
                                 </p>
                                 <form action="" method="post"
                                     class="d-flex align-items-center">
-                                    <button type="submit"
-                                        class="btn btn-outline-success btn-sm">Thêm vào giỏ hàng</button>
+                               <a href="/sanpham/chitiet/${item.maSP}">Xem chi tiết</a>
                                 </form>
                             </div>
                         </div>
@@ -149,46 +148,6 @@ body {
         </nav>
         </div>
     </div>
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    var typingTimer; // Biến để lưu trữ timeout
-    var doneTypingInterval = 500; // Thời gian chờ sau khi ngừng gõ (ms)
-
-    // Bắt sự kiện nhập vào ô tìm kiếm
-    document.querySelector('input[name="keywords"]').addEventListener('input', function(event) {
-        clearTimeout(typingTimer); // Xóa timeout hiện tại
-        var keywords = event.target.value.trim();
-
-        // Chờ 500ms trước khi gửi yêu cầu AJAX
-        typingTimer = setTimeout(function() {
-            sendAjaxRequest(keywords);
-        }, doneTypingInterval);
-    });
-
-    // Hàm gửi yêu cầu AJAX
-    function sendAjaxRequest(keywords) {
-        // Tạo yêu cầu AJAX
-        var xhr = new XMLHttpRequest();
-        xhr.open('GET', '/sanpham?keywords=' + encodeURIComponent(keywords), true);
-
-        // Xử lý phản hồi từ máy chủ
-        xhr.onreadystatechange = function() {
-            if (xhr.readyState === XMLHttpRequest.DONE) {
-                if (xhr.status === 200) {
-                    // Cập nhật danh sách sản phẩm với dữ liệu nhận được từ máy chủ
-                    var productListContainer = document.getElementById('sanphamupp');
-                    productListContainer.innerHTML = xhr.responseText;
-                } else {
-                    console.error('Đã có lỗi xảy ra: ' + xhr.status);
-                }
-            }
-        };
-
-        // Gửi yêu cầu AJAX
-        xhr.send();
-    }
-});
-</script>
 </body>
 </html>
 

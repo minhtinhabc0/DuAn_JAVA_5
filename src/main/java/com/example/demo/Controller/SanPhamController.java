@@ -1,5 +1,6 @@
 package com.example.demo.Controller;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -56,4 +59,24 @@ public class SanPhamController {
         model.addAttribute("link", "../sanpham/danhsachsp.jsp");
         return "home/home";
     }
+    
+    @GetMapping("/sanpham/chitiet/{id}")
+    public String viewProductDetail(@PathVariable("id") String id, Model model) {
+        // Retrieve the product by its ID
+        SanPham sanPham = sanPhamDAO.findById(id).orElse(null);
+        
+        if (sanPham != null) {
+            // Add the product to the model
+            model.addAttribute("sanPham", sanPham);
+            // Return the view name for the product detail page
+            return "chitiet/show";
+        } else {
+            // Product not found, redirect to error page or handle appropriately
+            return "error"; // Or return a custom error page
+        }
+    }
+
 }
+    
+
+
