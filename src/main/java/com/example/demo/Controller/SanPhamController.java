@@ -54,6 +54,6 @@ public class SanPhamController {
         model.addAttribute("keywords", kwords);
         model.addAttribute("sortOrder", sortOrder.orElse("")); 
         model.addAttribute("link", "../sanpham/danhsachsp.jsp");
-        return "/home/home";
+        return "home/home";
     }
 }
