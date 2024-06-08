@@ -51,7 +51,7 @@ public class SanPhamController {
         }
 
         Sort sort = Sort.by(sortDirection, sortField);
-        Pageable pageable = PageRequest.of(p.orElse(0), 3, sort);
+        Pageable pageable = PageRequest.of(p.orElse(0), 6, sort);
         Page<SanPham> pages = sanPhamDAO.findByKeywords("%" + kwords + "%", pageable);
         model.addAttribute("page", pages);
         model.addAttribute("keywords", kwords);
@@ -62,17 +62,14 @@ public class SanPhamController {
     
     @GetMapping("/sanpham/chitiet/{id}")
     public String viewProductDetail(@PathVariable("id") String id, Model model) {
-        // Retrieve the product by its ID
         SanPham sanPham = sanPhamDAO.findById(id).orElse(null);
         
         if (sanPham != null) {
-            // Add the product to the model
             model.addAttribute("sanPham", sanPham);
-            // Return the view name for the product detail page
             return "chitiet/show";
         } else {
-            // Product not found, redirect to error page or handle appropriately
-            return "error"; // Or return a custom error page
+        
+            return "error";
         }
     }
 

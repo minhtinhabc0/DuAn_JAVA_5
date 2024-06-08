@@ -14,6 +14,5 @@ public interface SanPhamDAO extends JpaRepository<SanPham, String> {
 	
     @Query("SELECT o FROM SanPham o WHERE o.tenSP LIKE %?1%")
     Page<SanPham> findByKeywords(String keywords, Pageable pageable);
-//	Page<SanPham> findAllByNameLike(String keywords, Pageable pageable);
     
 }

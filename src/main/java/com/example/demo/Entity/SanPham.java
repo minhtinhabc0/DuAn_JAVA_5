@@ -73,4 +73,5 @@ public class SanPham implements Serializable{
 
 	@Column(name = "KT4")
 	private int kt4;
+
 }
