@@ -1,124 +1,41 @@
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page pageEncoding="UTF-8" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Login</title>
-    <link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
-	crossorigin="anonymous">
-<script
-	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-	integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-	crossorigin="anonymous"></script>
-<script src="https://kit.fontawesome.com/e907e5cd51.js"
-	crossorigin="anonymous"></script>
-<style>
-
-        body {
-            padding: 0;
-            margin: 0;
-            background: linear-gradient(to bottom right, #d3e9ff, #a3c6ff);
-            background-attachment: fixed;
-            font-family: Arial, sans-serif;
-        }
-
-        .container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        .login-form {
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            max-width: 400px;
-            width: 100%;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.3);
-        }
-
-        .login-form h2 {
-            font-size: 2em;
-            margin-bottom: 20px;
-            text-align: center;
-            color: #333;
-        }
-
-        .login-form div {
-            margin-bottom: 15px;
-        }
-
-        .login-form label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-            color: #333;
-        }
-
-        .login-form input[type="text"],
-        .login-form input[type="password"] {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        .login-form input[type="checkbox"] {
-            margin-right: 10px;
-        }
-
-        .login-form input[type="submit"] {
-            width: 100%;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            background-color: #3636367c;
-            color: white;
-            font-size: 1em;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .login-form input[type="submit"]:hover {
-            background-color: #4a4a4a;
-        }
-
-        .login-form p {
-            color: red;
-            text-align: center;
-        }
-    </style></head>
+<meta charset="ISO-8859-1">
+<title>Login</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
 <body>
-    <div class="container">
-        <div class="login-form">
-            <h2>Login</h2>
-            <form:form method="post" action="/login" modelAttribute="user">
-                <div>
-                    <form:label path="username">Username:</form:label>
-                    <form:input path="username" />
-                </div>
-                <div>
-                    <form:label path="password">Password:</form:label>
-                    <form:password path="password" />
-                </div>
-                <div>
-                    <input type="checkbox" id="rememberMe" name="rememberMe" value="true" checked="checked">
-                    <label for="rememberMe">Remember me</label>
-                </div>
-                <div>
-                    <input type="submit" value="Login" />
-                </div>
-                <c:if test="${not empty error}">
-                    <p>${error}</p>
-                </c:if>
-            </form:form>
-        </div>
-    </div>
+	<div class="me-auto ms-auto w-25 mt-5 bg-dark-subtle p-4 rounded-5">
+		<h1 class="text-dark-emphasis text-center">Login</h1>
+		<form:form class="mt-3" action="/login" modelAttribute="taiKhoan" method="post">
+		  <div class="mb-3">
+		    <form:input path="username" placeholder="Username" type="text" class="form-control"/>
+		    <form:errors path="username" class="form-text text-danger" />
+		    <c:if test="${not empty error_loginUsername}">
+	  		  <div class="form-text text-danger" role="alert">
+		  		${error_loginUsername}
+			  </div>
+	  	    </c:if>
+		  </div>
+		  <div class="mb-3">
+		    <form:input path="password" placeholder="Password" type="password" class="form-control"/>
+		    <form:errors path="password" class="form-text text-danger" />
+		    <c:if test="${not empty error_loginPass}">
+	  		  <div class="form-text text-danger" role="alert">
+		  		${error_loginPass}
+			  </div>
+	  	    </c:if>
+		  </div>
+		  <div class="w-100 text-end">
+		  	<button type="submit" class="btn btn-secondary">Login</button>
+		  </div>
+		</form:form>
+	</div>
 </body>
 </html>
