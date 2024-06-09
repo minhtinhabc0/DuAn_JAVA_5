@@ -37,6 +37,7 @@
 		  </div>
 		  <div class="w-100 text-end">
 		  	<button formaction="/admin/index" formmethod="get" type="submit" class="btn btn-info" ${user.role == 'Admin'?'disabled':''}>Admin</button>
+		  	<button formaction="/admin/index" formmethod="get" type="submit" class="btn btn-info" ${user.role == 'user'?'disabled':''}>User</button>
 		  	<button type="submit" class="btn btn-danger">Logout</button>
 		  </div>
 		</form>
