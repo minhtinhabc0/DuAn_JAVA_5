@@ -52,7 +52,7 @@
                 <div class="col-sm-5">
                     <h1>${sanPham.tenSP}</h1>
                     <h2 class="text-danger">${sanPham.gia}</h2>
-                    size:
+                  <strong>size:</strong>  
                     <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
                         <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
                         <label class="btn" for="btnradio1">${sanPham.kt1}</label>
@@ -64,7 +64,8 @@
                         <label class="btn" for="btnradio4">${sanPham.kt4}</label>
                     </div>
                     <br>
-                    Màu sắc: 
+                    <br>
+                  <strong>Màu sắc: </strong>  
                         <div class="btn-group" role="group" aria-label="Basic radio toggle button group1">
                         <input type="radio" class="btn-check" name="btnradio2" id="mau1" autocomplete="off" checked>
                         <label class="btn" for="mau1">${sanPham.mau1}</label>

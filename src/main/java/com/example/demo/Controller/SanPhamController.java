@@ -66,6 +66,7 @@ public class SanPhamController {
         
         if (sanPham != null) {
             model.addAttribute("sanPham", sanPham);
+                    
             return "chitiet/show";
         } else {
         

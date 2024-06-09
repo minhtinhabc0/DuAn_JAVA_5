@@ -39,26 +39,26 @@
 								<li><a class="dropdown-item"
 									href="/danhmuc/${danhMuc.maDM}">${danhMuc.tenDN}</a></li>
 							</c:forEach>
-						</ul></li>
+						</ul></li >
 					<li class="nav-item"><a class="nav-link  " aria-current="page"
 						href="#!gioithieu">Giới thiệu</a></li>
 					<li class="nav-item"><a class="nav-link  " aria-current="page"
 						href="#">sắp ra mắt</a></li>
 				</ul>
-				<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+				<ul class="navbar-nav ms-auto mb-2 mb-lg-0"	${session.user != null ? '' : 'hidden'}>
 					<li class="nav-item dropstart"><a
-						class="nav-link dropdown-toggle" href="#" role="button"
+						class="nav-link dropdown-toggle" href="" role="button"
 						data-bs-toggle="dropdown" aria-expanded="false"> <img
-							src="img/avt.webp" alt="" height="40px" width="40px"
+							src="../img/avt.webp" alt="" height="40px" width="40px"
 							style="border-radius: 20px;"> <span
 							class="position-absolute translate-middle badge rounded-pill bg-RED"
 							style="background-color: rgb(226, 35, 76);"> <span
 								class="visually-hidden"></span></span> <!--thêm tên-->
 					</a>
 						<ul class="dropdown-menu">
-							<li><a class="dropdown-item" href="/login"><i
+							<li><a class="dropdown-item" href="#"><i
 									class="fa-solid fa-user"></i> Tài Khoản</a></li>
-							<li><a class="dropdown-item" href="/register"><i
+							<li><a class="dropdown-item" href="#"><i
 									class="fa-solid fa-key"></i> đổi mật khẩu</a></li>
 							<li><hr class="dropdown-divider"></li>
 							<li><a class="dropdown-item" href="/cart/view"><i
@@ -72,8 +72,17 @@
 							<li><a class="dropdown-item" href="#" type="button"
 								class="btn btn-primary" id="liveToastBtn"><i
 									class="fa-solid fa-circle-info"></i> trợ giúp</a></li>
+									
+									<li><hr class="dropdown-divider"></li>									
+							<li><a class="dropdown-item" href="#" type="button"
+								class="btn btn-primary" id="liveToastBtn"><i
+									class="fa-solid fa-circle-info"></i> Đăng xuất</a></li>
+									
+									
 						</ul></li>
 				</ul>
+				
+				<a href="/login" ${session.user != null ? 'hidden' : ''}>đăng nhập</a>
 			</div>
 		</div>
 	</nav>

@@ -51,7 +51,8 @@ public class DanhMucController {
             List<SanPham> sanPhamList = sanPhamDAO.findByMaDM(maDM);
             model.addAttribute("danhMuc", danhMuc);
             model.addAttribute("sanPhamList", sanPhamList);
-            return "danhmuc-detail";
+            model.addAttribute("link", "../danhmuc-detail.jsp");
+            return "home/home";
         } else {
             // Handle the case when no DanhMuc is found
             return "error"; // or throw an exception, depending on your requirements
