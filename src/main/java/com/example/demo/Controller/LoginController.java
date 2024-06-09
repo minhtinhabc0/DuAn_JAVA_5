@@ -31,38 +31,42 @@ public class LoginController {
 	
 	@PostMapping("/login")
 	public String login(Model model, @Validated @ModelAttribute("taiKhoan") TaiKhoan tk, BindingResult result) {
-		if(!result.hasErrors()) {
-			TaiKhoan acc = null;
-			try {
-				acc = tkDao.findByUsername(tk.getUsername()).get();
-				if(acc.getPassword().equals(tk.getPassword())) {
-					session.set("user", acc);
-					String uri = session.get("security-uri");
-					if(uri!=null) {
-						if(!uri.equals("") && uri.contains("/admin/")) {
-							return "redirect:/admin/index";
-						}
-						else if(uri.contains("/account/")) {
-							return "redirect:/account/index";
-						}
-						else 
-							return "login/account";
-					}
-					else 
-						return "login/account";
-				}
-				else {
-					model.addAttribute("error_loginPass", "Password không đúng!");
-				}
-			} catch (Exception e) {
-				// TODO: handle exception
-				e.printStackTrace();
-				model.addAttribute("error_loginUsername", "Username không tồn tại!");
-			}
-			
-		}
-		return "login";
+	    if (!result.hasErrors()) {
+	        TaiKhoan acc = null;
+	        try {
+	            acc = tkDao.findByUsername(tk.getUsername()).orElse(null);
+	            if (acc != null && acc.getPassword().equals(tk.getPassword())) {
+	                session.set("user", acc);
+	                String uri = session.get("security-uri");
+
+	                if (acc.isRole()) {  // Kiểm tra nếu là admin
+	                    // Logic điều hướng cho admin
+	                    if (uri != null) {
+	                        if (!uri.equals("") && uri.contains("/admin/")) {
+	                            return "redirect:/admin/index";
+	                        } else if (uri.contains("/account/")) {
+	                            return "redirect:/account/index";
+	                        } else {
+	                            return "redirect:/account/index";  // Chuyển hướng đến trang tài khoản
+	                        }
+	                    } else {
+	                        return "redirect:/account/index";  // Chuyển hướng đến trang tài khoản
+	                    }
+	                } else {
+	                    // Logic điều hướng cho user
+	                    return "redirect:/";  // Chuyển hướng đến trang chủ
+	                }
+	            } else {
+	                model.addAttribute("error_loginPass", "Password không đúng!");
+	            }
+	        } catch (Exception e) {
+	            e.printStackTrace();
+	            model.addAttribute("error_loginUsername", "Username không tồn tại!");
+	        }
+	    }
+	    return "login";
 	}
+
 	
 	@PostMapping("/logout")
 	public String logout(@ModelAttribute("taiKhoan") TaiKhoan tk) {
