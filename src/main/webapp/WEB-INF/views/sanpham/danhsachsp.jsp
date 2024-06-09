@@ -74,6 +74,10 @@ body {
     color: #000;
     text-decoration: underline;
 }
+.hinh{
+	height: 200px;
+	width: 200px;
+}
 
 </style>
 </head>
@@ -114,9 +118,10 @@ body {
             <div class="row" id="sanphamupp">
                 <c:forEach var="item" items="${page.content}">
                     <div class="col-md-4">
+                    <a href="/sanpham/chitiet/${item.maSP}" class="text-decoration-none text-dark">
                         <div class="card">
                             <div class="card-body">
-                                <img src="..." class="card-img-top" alt="Product Image">
+                                <img src="../../hinh/${item.img}" class="card-img-top" alt="Product Image">
                                 <h5 class="card-title">${item.tenSP}</h5>
                                 <p class="card-text">
                                     <strong>Giá:</strong> ${item.gia} đ
@@ -124,12 +129,10 @@ body {
                                 <p class="card-text">
                                     <strong>Mô tả:</strong> ${item.moTa}
                                 </p>
-                                <form action="" method="post"
-                                    class="d-flex align-items-center">
-                               <a href="/sanpham/chitiet/${item.maSP}">Xem chi tiết</a>
-                                </form>
+                            
                             </div>
                         </div>
+					</a>
                     </div>
                 </c:forEach>
             </div>

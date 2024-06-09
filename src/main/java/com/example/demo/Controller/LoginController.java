@@ -26,7 +26,7 @@ public class LoginController {
 	
 	@GetMapping("/login")
 	public String index(@ModelAttribute("taiKhoan") TaiKhoan tk) {
-		return "login";
+		return "login/login";
 	}
 	
 	@PostMapping("/login")
@@ -46,10 +46,10 @@ public class LoginController {
 							return "redirect:/account/index";
 						}
 						else 
-							return "account";
+							return "login/account";
 					}
 					else 
-						return "account";
+						return "login/account";
 				}
 				else {
 					model.addAttribute("error_loginPass", "Password không đúng!");
