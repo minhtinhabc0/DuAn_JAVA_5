@@ -45,7 +45,7 @@
 					<li class="nav-item"><a class="nav-link  " aria-current="page"
 						href="#">sắp ra mắt</a></li>
 				</ul>
-				<ul class="navbar-nav ms-auto mb-2 mb-lg-0"	${session.user != null ? '' : 'hidden'}>
+				<ul class="navbar-nav ms-auto mb-2 mb-lg-0" ${sessionScope.user != null ? '' : 'hidden'}>
 					<li class="nav-item dropstart"><a
 						class="nav-link dropdown-toggle" href="" role="button"
 						data-bs-toggle="dropdown" aria-expanded="false"> <img
@@ -56,7 +56,7 @@
 								class="visually-hidden"></span></span> <!--thêm tên-->
 					</a>
 						<ul class="dropdown-menu">
-							<li><a class="dropdown-item" href="#"><i
+							<li><a class="dropdown-item" href="/account"><i
 									class="fa-solid fa-user"></i> Tài Khoản</a></li>
 							<li><a class="dropdown-item" href="#"><i
 									class="fa-solid fa-key"></i> đổi mật khẩu</a></li>
@@ -74,7 +74,7 @@
 									class="fa-solid fa-circle-info"></i> trợ giúp</a></li>
 									
 									<li><hr class="dropdown-divider"></li>									
-							<li><a class="dropdown-item" href="#" type="button"
+							<li><a class="dropdown-item" href="/logout" type="button"
 								class="btn btn-primary" id="liveToastBtn"><i
 									class="fa-solid fa-circle-info"></i> Đăng xuất</a></li>
 									
@@ -82,7 +82,7 @@
 						</ul></li>
 				</ul>
 				
-				<a href="/login" ${session.user != null ? 'hidden' : ''}>đăng nhập</a>
+			<a href="/login" ${sessionScope.user != null ? 'hidden' : ''}>đăng nhập</a>
 			</div>
 		</div>
 	</nav>
